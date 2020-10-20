@@ -10,6 +10,6 @@
   pip:
     executable: pip3
     name: 
-        - mysql-connector-python
+        - MySql-python
   when: ansible_facts['distribution'] == "Ubuntu"
   notify:  Restart Mysql
