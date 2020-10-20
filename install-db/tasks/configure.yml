@@ -4,12 +4,21 @@
 #    host: webserver
 #    state: absent
 #  with_items: "{{ mysql_anonymous_hosts.stdout_lines|default([]) }}"
+- name: MariaDB | Create a new pass for root user
+  shell: openssl rand -base64 6 creates=/dmoraes/.my.cnf
+  register: mysql_root_pass
 
-- name: Remove database test
-  mysql_db:
-    host: webserver
-    name: test
-    state: absent
+- name: MariaDB | Display new pass in playbook  output
+  debug:
+    msg: "New root pass: {{mysql_root_pass.stdout}}"
+  when: mysql_root_pass.changed
+
+#- name: Remove database test
+#  mysql_db:
+#    host: webserver
+#    name: test
+#    state: absent
+#
 #
 #- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
 #  mysql_user:
