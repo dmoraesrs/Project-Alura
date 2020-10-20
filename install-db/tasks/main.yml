@@ -1,0 +1,3 @@
+---
+# tasks file for install-db
+- import_tasks: setup-db.yml
