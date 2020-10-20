@@ -1,4 +1,4 @@
-- hosts: awx
+- hosts: all
   strategy: debug
   become: yes
   user: dmoraes
@@ -8,7 +8,7 @@
       raw: 'apt-get install -y python'
     - name: 'Update o Repo'
       raw: 'apt-get -y update'
-- hosts: awx
+- hosts: all
   strategy: debug
   become: yes
   user: dmoraes
