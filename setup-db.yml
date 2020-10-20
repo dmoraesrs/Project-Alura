@@ -1,7 +1,6 @@
 - hosts: all
-  strategy: debug
   become: yes
   user: dmoraes
   roles:
-  - { role: install-db, tags: ["install_awx"]}
+  - { role: install-db, tags: ["install_db"]}
     
