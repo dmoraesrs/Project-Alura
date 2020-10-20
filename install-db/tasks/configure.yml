@@ -9,7 +9,7 @@
 
 - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
   mysql_user:
-    name: bob
-    password: 12345
+    name: dmoraes
+    password: "{{mysql_root_pass.stdout}}"
     priv: '*.*:ALL,GRANT'
     state: present
