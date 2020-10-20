@@ -2,5 +2,5 @@
 # handlers file for configure-snmp
 - name: Restart Mysql
   service:
-    name: mysql
+    name: mariadb
     state: restarted
