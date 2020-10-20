@@ -1,15 +1,10 @@
-- name: Instalando Mariadb-Server
-  apt:
-    pkg:
+- name: Instalando pacotes do MariaDB
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
     - mariadb-server
-    - mariadb-client
-    update_cache: yes
-  when: ansible_facts['distribution'] == "Ubuntu"
-  notify:  Restart Mysql
-- name: Install Compose
-  pip:
-    executable: pip3
-    name: 
-        - PyMySQL
-  when: ansible_facts['distribution'] == "Ubuntu"
+    - mariadb
+    - MySQL-python
+  when: ansible_facts['distribution'] == "Centos"
   notify:  Restart Mysql
