@@ -5,7 +5,7 @@
 #    state: absent
 #  with_items: "{{ mysql_anonymous_hosts.stdout_lines|default([]) }}"
 - name: MariaDB | Create a new pass for root user
-  shell: openssl rand -base64 6 creates=/dmoraes/.my.cnf
+  shell: openssl rand -base64 12 creates=/dmoraes/.my.cnf
   register: mysql_root_pass
 
 - name: MariaDB | Display new pass in playbook  output
