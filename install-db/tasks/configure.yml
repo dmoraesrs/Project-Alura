@@ -13,6 +13,16 @@
     msg: "New root pass: {{mysql_root_pass.stdout}}"
   when: mysql_root_pass.changed
 
+
+- name: Create database user using hashed password with all database privileges
+  mysql_user:
+    name: bob
+    password: "{{mysql_root_pass.stdout}}"
+    encrypted: yes
+    priv: '*.*:ALL'
+    state: present
+
+    
 #- name: Remove database test
 #  mysql_db:
 #    host: webserver
