@@ -5,3 +5,4 @@
     - mariadb-client
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
+  notify: Restart Snmp

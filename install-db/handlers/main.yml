@@ -1,2 +1,6 @@
 ---
-# handlers file for install-db
+# handlers file for configure-snmp
+- name: Restart Mysql
+  service:
+    name: mysql
+    state: restarted
