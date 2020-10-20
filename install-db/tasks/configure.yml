@@ -5,14 +5,14 @@
     state: absent
   with_items: "{{ mysql_anonymous_hosts.stdout_lines|default([]) }}"
 
-- name: Remove database test
-  mysql_db:
-    name: test
-    state: absent
-
-- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
-  mysql_user:
-    name: dmoraes
-    password: 12345
-    priv: '*.*:ALL,GRANT'
-    state: present
+#- name: Remove database test
+#  mysql_db:
+#    name: test
+#    state: absent
+#
+#- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+#  mysql_user:
+#    name: dmoraes
+#    password: 12345
+#    priv: '*.*:ALL,GRANT'
+#    state: present
