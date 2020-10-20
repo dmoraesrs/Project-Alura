@@ -1,9 +1,8 @@
 - name: Instalando Mariadb-Server
   apt:
     pkg:
-    #- mariadb-server
-    #- mariadb-client
-    - python-mysqldb
+    - mariadb-server
+    - mariadb-client
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   notify:  Restart Mysql
