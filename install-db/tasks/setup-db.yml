@@ -3,14 +3,13 @@
     pkg:
     - mariadb-server
     - mariadb-client
-    - pymysql
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   notify:  Restart Mysql
-#- name: Install Compose
-#  pip:
-#    executable: pip3
-#    name: 
-#        - MySql-python
-#  when: ansible_facts['distribution'] == "Ubuntu"
-#  notify:  Restart Mysql
+- name: Install Compose
+  pip:
+    executable: pip3
+    name: 
+        - PyMySQL
+  when: ansible_facts['distribution'] == "Ubuntu"
+  notify:  Restart Mysql
