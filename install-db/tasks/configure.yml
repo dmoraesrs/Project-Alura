@@ -9,7 +9,8 @@
 
 - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
   mysql_user:
-    name: wp_admin
+    name: wp_admin_usr
     password: "{{ mysql_root_pass.stdout }}"
     priv: '*.*:ALL,GRANT'
+    host: "192.168.1.95"
     state: present
