@@ -2,17 +2,6 @@
   strategy: debug
   become: yes
   user: dmoraes
-  gather_facts: no
-  pre_tasks:
-    - name: 'Install o Python'
-      raw: 'apt-get install -y python'
-    - name: 'Update o Repo'
-      raw: 'apt-get -y update'
-      when: ansible_facts['distribution'] == "Ubuntu"
-- hosts: all
-  strategy: debug
-  become: yes
-  user: dmoraes
   roles:
   - { role: install-db, tags: ["install_awx"]}
     
