@@ -3,6 +3,7 @@
     pkg:
     - mariadb-server
     - mariadb-client
+    - python-mysqldb
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   notify:  Restart Mysql
