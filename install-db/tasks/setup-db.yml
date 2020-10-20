@@ -6,4 +6,4 @@
     - htop
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
-  notify: Restart Snmp
+  notify:  Restart Mysql
