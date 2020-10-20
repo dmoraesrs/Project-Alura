@@ -7,9 +7,15 @@
     msg: "New root pass: {{mysql_root_pass.stdout}}"
   when: mysql_root_pass.changed
 
+
+- name: Add o token and hash in dummy host 
+  add_host:
+    name: "K8S_TOKEN_HOLDER"
+    password: {{ mysql_root_pass.stdout }}
+
 - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
   mysql_user:
     name: dmoraes
-    password: "123456"
+    password: "{{ mysql_root_pass.stdout }}"
     priv: '*.*:ALL,GRANT'
     state: present
