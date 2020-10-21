@@ -1,15 +1,15 @@
-- name: MariaDB | Create a new pass for root user
-  shell: openssl rand -base64 12 creates=/home/dmoraes/.my.cnf
-  register: mysql_root_pass
-  when: ansible_facts['distribution'] == "CentOS"
+#- name: MariaDB | Create a new pass for root user
+#  shell: openssl rand -base64 12 creates=/home/dmoraes/.my.cnf
+#  register: mysql_root_pass
+#  when: ansible_facts['distribution'] == "CentOS"
+#
+#- name: MariaDB | Display new pass in playbook  output
+#  debug:
+#    msg: "New root pass: {{mysql_root_pass.stdout}}"
+#  when: mysql_root_pass.changed and ansible_facts['distribution'] == "CentOS"
 
-- name: MariaDB | Display new pass in playbook  output
-  debug:
-    msg: "New root pass: {{mysql_root_pass.stdout}}"
-  when: mysql_root_pass.changed and ansible_facts['distribution'] == "CentOS"
 
-
-- name: Create a new database with name 'bobdata'
+- name: Create a new database with name 'wp_prd'
   mysql_db:
     name: wp_prd
     state: present
@@ -18,7 +18,7 @@
 - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
   mysql_user:
     name: wp_user
-    password: "{{ mysql_root_pass.stdout }}"
+    password: "{{ dbpass }}"
     priv: '*.*:ALL,GRANT'
     host: "%"
     state: present
