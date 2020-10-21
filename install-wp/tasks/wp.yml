@@ -1,2 +1,2 @@
 - name: Criando Container
-  shell: docker container run -p 8082:80 -e WORDPRESS_DB_HOST={{ dbhost }}:{{ dbport }} -e WORDPRESS_DB_USER={{ dbuser }} -e WORDPRESS_DB_PASSWORD={{ dppass }} -d wordpress
+  shell: docker container run -p 8082:80 -e WORDPRESS_DB_HOST={{ dbhost }}:{{ dbport }} -e WORDPRESS_DB_USER={{ dbuser }} -e WORDPRESS_DB_PASSWORD={{ dbpass }} -d wordpress
