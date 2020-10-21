@@ -1,4 +1,4 @@
-- hosts: dbserver
+- hosts: all
   strategy: debug
   become: yes
   user: dmoraes
