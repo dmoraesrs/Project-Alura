@@ -8,3 +8,8 @@
     - MySQL-python
   when: ansible_facts['distribution'] == "CentOS"
   notify:  Restart Mysql
+
+- name: Enable service Mysql, and not touch the state
+  service:
+    name: mariadb
+    enabled: yes

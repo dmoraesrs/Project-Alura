@@ -1,0 +1,2 @@
+- name: Criando Container
+  shell: docker run -e WORDPRESS_DB_HOST={{ dbhost }}:{{ dbport }} -e WORDPRESS_DB_USER={{ dbuser }} -e WORDPRESS_DB_PASSWORD={{ dppass }} -d wordpress

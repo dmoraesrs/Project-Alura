@@ -1,2 +1,6 @@
 ---
 # vars file for install-wp
+dbhost: 192.168.1.96
+dbport: 3306
+dbuser: wp_user
+dbpass: MshURKTFtxXag+9Q
