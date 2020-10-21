@@ -1,0 +1,8 @@
+- hosts: dbserver
+  strategy: debug
+  become: yes
+  user: dmoraes
+  roles:
+  - { role: install-wp, tags: ["install-wp"]}
+  
+    
