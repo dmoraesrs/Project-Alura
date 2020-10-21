@@ -13,3 +13,4 @@
   service:
     name: mariadb
     enabled: yes
+  when: ansible_facts['distribution'] == "CentOS"
