@@ -11,7 +11,7 @@
 
 - name: Create a new database with name 'wp_prd'
   mysql_db:
-    name: wp_prd
+    name: wp_prd1
     state: present
   when: ansible_facts['distribution'] == "CentOS"
 
