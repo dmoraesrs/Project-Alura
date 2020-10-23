@@ -9,7 +9,9 @@
   notify: Restart mariadb
   when: ansible_facts['distribution'] == "CentOS"
   
-
+- name: Instalando pacotes do MariaDB
+  notify: Restart mariadb
+  
 - name: Enable service Mysql, and not touch the state
   service:
     name: mariadb
