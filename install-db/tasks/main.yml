@@ -1,4 +1,4 @@
 ---
 # tasks file for install-db
-#- import_tasks: setup-db.yml
+- import_tasks: setup-db.yml
 - import_tasks: configure.yml
