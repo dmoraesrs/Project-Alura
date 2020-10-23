@@ -6,7 +6,7 @@
     - mariadb-server
     - mariadb
     - MySQL-python
-  notify:  Restart Mysql
+  notify: Restart mariadb
   when: ansible_facts['distribution'] == "CentOS"
   
 
@@ -14,5 +14,5 @@
   service:
     name: mariadb
     enabled: yes
-  notify:  Restart Mysql
+  notify: Restart mariadb
   when: ansible_facts['distribution'] == "CentOS"
