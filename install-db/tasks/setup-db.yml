@@ -10,7 +10,7 @@
   when: ansible_facts['distribution'] == "CentOS"
   
 - name: Instalando pacotes teste
-  notify: Restart mariadb
+  shell: systemctl restart mariadb
 
 - name: Enable service Mysql, and not touch the state
   service:
