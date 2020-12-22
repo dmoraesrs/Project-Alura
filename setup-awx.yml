@@ -1,7 +1,7 @@
 - hosts: awx
   strategy: debug
   become: yes
-  user: dmoraes
+  user: adminlx
   gather_facts: no
   pre_tasks:
     - name: 'Install o Python'
@@ -11,7 +11,7 @@
 - hosts: awx
   strategy: debug
   become: yes
-  user: dmoraes
+  user: adminlx
   roles:
   - { role: install-awx, tags: ["install_awx"]}
   
