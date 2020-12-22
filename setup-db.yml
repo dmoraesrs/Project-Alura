@@ -1,6 +1,6 @@
 - hosts: all
   become: yes
-  user: dmoraes
+  user: adminlx
   roles:
   - { role: install-db, tags: ["install_db"]}
     
