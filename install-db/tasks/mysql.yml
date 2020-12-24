@@ -7,15 +7,12 @@
     - mariadb
     - MySQL-python
   notify: Restart mariadb
-  when: ansible_facts['distribution'] == "CentOS"
   
 - name: Instalando pacotes teste
   shell: systemctl restart mariadb
-  when: ansible_facts['distribution'] == "CentOS"
 
 - name: Enable service Mysql, and not touch the state
   service:
     name: mariadb
     enabled: yes
   notify: Restart mariadb
-  when: ansible_facts['distribution'] == "CentOS"
